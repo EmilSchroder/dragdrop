@@ -2,7 +2,7 @@
 let count = 0;
 
 function startdrag(e){
-    e.dataTransfer.setData("text", e.target.id)
+    e.dataTransfer.setData("fun", e.target.id)
     e.target.parentElement.style.background = 'white'
     
 }
@@ -13,7 +13,7 @@ function allowDrop(e){
 
 function doTheDrop(e){
     e.preventDefault();
-    let data = e.dataTransfer.getData("text")
+    let data = e.dataTransfer.getData("fun")
     e.target.appendChild(document.getElementById(data))
     count++;
     showColor(e)
@@ -21,7 +21,7 @@ function doTheDrop(e){
 }
 
 function showColor(e){
-    if (e.target.id != 'noshow'){
+    if (!(e.target.classList.contains('noshow'))){
         e.target.style.background= valueSelector(count)
     }
 }
