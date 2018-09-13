@@ -16,8 +16,14 @@ function doTheDrop(e){
     let data = e.dataTransfer.getData("text")
     e.target.appendChild(document.getElementById(data))
     count++;
-    e.target.style.background= valueSelector(count)
+    showColor(e)
     
+}
+
+function showColor(e){
+    if (e.target.id != 'noshow'){
+        e.target.style.background= valueSelector(count)
+    }
 }
 
 function valueSelector(x){
