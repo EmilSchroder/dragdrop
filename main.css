@@ -1,6 +1,10 @@
 .holder{
     border: 1px black solid;
-    width: 350px;
-    height: 350px;
+    width: 100px;
+    height: 100px;
     padding: 10px;
+}
+
+img{
+    width:100px;
 }
